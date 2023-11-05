@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+}
+
+.sidebar img {
+    margin-bottom: 20px; /* Spacing between logo and icons */
+}
+
+.sidebar i {
+    font-size: 20px; /* Increase icon size */
+    margin: 10px 0; /* Spacing between icons */
+}
+
+.sidebar a {
+    width: 100%;
+    text-align: center; /* Center text horizontally */
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 20px;
+    
+    
+}
+
+.sidebar a:hover {
+    background-color: #00ff91;
+    border-radius: 12px;
+}
+
+/* Logout Button */
+.logout-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logout-button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+
+}
+
+.content {
+    width: 100%;
+    align-items: right;
+}
+
+/* Apply basic styles to the grid container */
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 4fr; /* Two rows, top and bottom */
+    grid-template-columns: 1fr; /* One column for the top */
+    height: 100vh; /* Full viewport height */
+    grid-gap: 20px;
+
+}
+
+/* ... Your existing CSS ... */
+
+/* Style the top column */
+.top-column {
+    display: flex;
+    justify-content: space-between; /* Align to the right and left edges */
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.top-column-title {
+    text-align: left; /* The title is already aligned to the left */
+    margin-left: 50px;
+    flex-grow: 1; /* Allow the title to take available space */
+}
+
+.top-column h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.top-column-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the search container */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Style the search input */
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%; /* Take up the available width */
+    border-radius: 10px;
+}
+
+/* Style and position the search icon within the container */
+.search-container i {
+    margin: 0 10px; /* Add space between the icon and input */
+    font-size: 20px;
+    cursor: pointer; /* Add a pointer cursor to the icon */
+}
+
+/* ... Your existing CSS ... */
+
+
+
+
+.mode-icons {
+    display: flex;
+    align-items: center;
+    
+}
+
+.mode-icons i{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.categories {
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute space evenly between categories */
+    width: 100%;
+}
+
+/* Style each category */
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px; /* Adjust the minimum width as needed */
+    max-width: 25%; /* Limit the maximum width to 25% of the container */
+    margin: 5px; /* Add some margin between categories */
+}
+
+/* Style category images */
+.category img {
+    max-width: 50px; /* Adjust the image size as needed */
+    margin: 0 auto; /* Center the images horizontally */
+    display: block; /* Force images to display as blocks, stacking them on top of each other */
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+
+
+/* Style category text */
+.category .p {
+    font-size: 13px; /* Make the category title smaller */
+    text-align: left;
+    color: gray;
+    font-weight: bold; 
+}
+
+.category h5{
+    font-size: 9;
+}
+
+.category p{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
+
+/* Float the text to the right of the image */
+.category .category-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Align text to the right of the image */
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+/* Add background color to the right of the text */
+.category .category-content::before {
+    content: '';
+    flex-grow: 1;
+    height: 100%;
+    background-color: #00ff91; /* Background color */ /* Background color */
+    margin-left: 10px; /* Adjust margin as needed */
+}
+
+.category-link {
+    text-decoration: none;
+    color: #333; /* Text color for unvisited links */
+    transition: color 0.3s; /* Add a smooth color transition effect */
+}
+
+.category .category-content:hover {
+    background-color: #00ff91; /* Change the background color on hover */
+    border-radius: 15px;
+}
+
+
+.card p{
+    font-size: 12px;
+}
+
+.card li{
+    font-size: 12px;
+}
+
+/* Style the product image */
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+}
+
+.small-image {
+    max-width: 100px; /* Adjust the maximum width as needed */
+    max-height: 100px; /* Adjust the maximum height as needed */
+}
+
+.cart h3{
+    text-align: left;
+}
+
+.card img{
+    width: 200px;
+    height: 130px;
+}
+
+
+
+/* Add a media query for responsive styles */
+@media screen and (max-width: 768px) {
+    .top-column-title {
+        margin: 0 10px 0 10px; /* Adjust margins for smaller screens */
+    }
+
+    .search-bar input {
+        width: 200px; /* Adjust the width for smaller screens */
+    }
+}
+
+
+/* Style the bottom columns as a sub-grid */
+.bottom-columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 100%; /* Full height of the viewport */
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+/* Style each bottom column individually */
+.bottom-column {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 10px; /* Add margin only to the left and right */
+}
+
+
+
+

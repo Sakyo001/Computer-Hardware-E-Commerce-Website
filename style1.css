@@ -1,0 +1,560 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/pic2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black; 
+    padding: 0;
+    margin: auto;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.logo {
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+}
+
+.logo h2{
+    float: right;
+    margin-left: 10px;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.logo img {
+    max-width: 100px;
+    border-radius: 50px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.content {
+    display: inline;
+   
+}
+
+.headings {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 4px;
+    margin-top: 25%;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.headings p{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+.registration-form .header{
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the background color and opacity to your preference */
+    border-radius: 30px 30px 0 0; /* Add rounded corners for a glassy effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    /* Apply the backdrop filter for blurring the background */
+    backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
+}
+
+.registration-form .h1{
+    font-size: 28px;
+    margin: 10px 0 10px 0;
+    color: black;
+}
+
+
+.registration-form {
+    /* background-image: url('img/pic2.jpg'); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(35%, -65%);
+    min-width: 400px; 
+    height: 600px;
+    margin-right: 20px;
+    margin-top: 120px;
+    padding-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Add rounded corners for a glassy effect */
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    /* Apply the backdrop filter for blurring the background */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+}
+
+
+.registration-form p{
+    text-align: left;
+    margin-left: 15%;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.registration-form h3{
+    margin-top: 0px;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+.registration-form h3 a{
+    color: black;
+
+}
+
+.registration-form input[type="text"], input[type="password"], input[type="email"],input[type="number"]{
+    position: relative;
+    margin: 0;
+    padding: 7px;
+    border: 2px solid gray;
+    width: 70%;
+    border-radius: 5px;
+}
+
+.registration-form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="number"]::placeholder{
+    color: black;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.registration-form .form-inline{
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 55%;
+    justify-content: center;
+    align-items: center;  
+}
+
+.registration-form .form-inline input[type="number"]::placeholder, input[type="text"]::placeholder{
+    padding: 0;
+    margin: 0;
+}
+
+.s-input {
+    width: 100%;
+    display: inline-block;
+    justify-content: left;
+    margin-top: 5px;
+  
+}
+
+.s-input p {
+    display: inline;
+    margin-right: 20px; /* Adjust the margin as needed for spacing */
+}
+
+.s-input-group {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the margin as needed for spacing */
+}
+
+
+
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.registration-form input[type="submit"]{
+    position: relative;
+    background-color: black;
+    color: white;
+    width: 140px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px 0 10px 0;
+}
+
+.registration-form p{
+    margin-top: 1px;
+}
+
+.registration-form p a{
+    color: white;
+    font-weight: bold;
+}
+
+.registration-form p a:hover{
+    color: white;
+}
+
+.registration-form input[type="submit"]:hover{
+    background-color: blue;
+    color: white;
+
+}
+
+
+
+.contact-footer {
+    background-image: url('img/pic2.jpg');
+    color: black;
+    padding: 20px 40px 15px 40px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.contact-footer h2{
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+
+
+/* Style the contact info list */
+.contact-info {
+    list-style: none;
+    padding: 0 20px 0 20px;
+    margin: 0; 
+    margin-bottom: 5px;
+}
+
+
+
+.contact-info i{
+    margin-right: 10px;
+}
+
+.contact-info li {
+    font-size: 15px;
+    display: inline-block; /* Display items inline */
+    margin-right: 30px; /* Add space between items */
+    margin-top: 10px;
+}
+
+/* Font Awesome icons styling */
+.fas, .fab, .fa {
+    font-size: 20px;
+}
+
+
+
+.alert-box {
+    background-color: #f44336; /* Red background color */
+    color: white; /* Text color */
+    padding: 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the alert box */
+}
+
+/* Tablet View */
+
+@media screen and (max-width: 768px) {
+   
+    .logo h2{
+        float: right;
+        margin-left: 10px;
+        font-size: 20px;
+    }    
+
+    .headings h1{
+        display: none;
+    }
+
+    .headings p{
+        display: none;
+    }
+
+
+    .registration-form{
+        position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       min-width: 320px;
+       max-width: 70%; /* Allow the form to shrink when the browser gets smaller */
+       padding: 20px;
+       text-align: center;
+       background-color: rgba(255, 255, 255, 0.1);
+       border-radius: 10px;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+       backdrop-filter: blur(10px);
+    }
+
+    .registration-form .header{
+        padding: 5px;
+        background-color: #0b0b4a;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .registration-form .h1{
+        font-size: 24px;
+    }
+
+    .registration-form p{
+        text-align: left;
+        margin-left: 20%;
+        font-size: 18px;
+    }
+    
+    .registration-form h3{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    
+    
+    .registration-form h3 a{
+        color: white;
+    }
+    
+    .registration-form input[type="text"], input[type="password"], input[type="number"]{
+        padding: 7px;
+        border: 2px solid gray;
+        width: 60%;
+        border-radius: 10px;
+    }
+    
+    .registration-form input[type="text"]::placeholder, input[type="password"]::placeholder{
+        color: black;
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .registration-form input[type="submit"]{
+        background-color: darkblue;
+        color: white;
+        width: 140px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .registration-form p{
+        margin-top: 15px;
+    }
+    
+    .registration-form p a{
+        color: white;
+        font-weight: bold;
+    }
+
+    .registration-form .form-inline{
+        margin: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 25% 45%;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .registration-form .form-inline input[type="text"]::placeholder{
+        padding: 2px;
+    }
+
+    .s-input {
+        width: 100%;
+        display: inline-block;
+        justify-content: left;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+    
+    .s-input p {
+        display: inline;
+        margin-right: 20px; /* Adjust the margin as needed for spacing */
+    }
+    
+    .s-input-group {
+        display: inline-block;
+        margin-right: 5px; /* Adjust the margin as needed for spacing */
+        
+    }
+    
+    .registration-form p a:hover{
+        color: white;
+    }
+    
+    .registration-form input[type="submit"]:hover{
+        background-color: black;
+        color: white;
+    
+    }
+
+            /* Style the contact info list */
+
+    .contact-footer h2{
+        font-size: 18px;
+    }
+
+    .contact-info {
+        list-style: none;
+        padding: 0 20px 0 20px;
+        margin: 0; 
+       
+    }
+
+
+
+    .contact-info i{
+        margin-right: 8px;
+    }
+
+    .contact-info li {
+        font-size: 10px;
+        display: inline-block; /* Display items inline */
+        margin-right: 30px; /* Add space between items */
+       
+    }
+
+    /* Font Awesome icons styling */
+    .fas, .fab, .fa {
+        font-size: 18px;
+    }
+}
+
+/* Mobile-L View */
+
+
+@media screen and (max-width: 425px) {
+
+.logo h2{
+    float: right;
+    margin-left: 10px;
+    font-size: 20px;
+}    
+
+.headings h1{
+    display: none;
+}
+
+.headings p{
+    display: none;
+}
+
+
+.registration-form{
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -80%);
+   min-width: 320px;
+   max-width: 70%; /* Allow the form to shrink when the browser gets smaller */
+   padding: 20px;
+   text-align: center;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(10px);
+}
+
+
+.registration-form .h1{
+    font-size: 24px;
+   
+}
+
+.registration-form p{
+    text-align: left;
+    margin-left: 20%;
+    font-size: 18px;
+}
+
+.registration-form h3{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+.registration-form h3 a{
+    color: white;
+}
+
+.registration-form input[type="text"], input[type="password"]{
+    padding: 7px;
+    border: 2px solid gray;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.registration-form input[type="text"]::placeholder, input[type="password"]::placeholder{
+    color: black;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.registration-form input[type="submit"]{
+    background-color: darkblue;
+    color: white;
+    width: 140px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.registration-form p{
+    margin-top: 15px;
+}
+
+.registration-form p a{
+    color: white;
+    font-weight: bold;
+}
+
+.registration-form p a:hover{
+    color: white;
+}
+
+.registration-form input[type="submit"]:hover{
+    background-color: black;
+    color: white;
+
+}
+
+        /* Style the contact info list */
+
+.contact-footer h2{
+    font-size: 18px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0 20px 0 20px;
+    margin: 0; 
+   
+}
+
+
+
+.contact-info i{
+    margin-right: 8px;
+}
+
+.contact-info li {
+    font-size: 10px;
+    display: inline-block; /* Display items inline */
+    margin-right: 30px; /* Add space between items */
+   
+}
+
+/* Font Awesome icons styling */
+.fas, .fab, .fa {
+    font-size: 18px;
+}
+}
