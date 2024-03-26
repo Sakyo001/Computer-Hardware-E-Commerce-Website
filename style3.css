@@ -1,308 +1,535 @@
+/* Reset some default styles for consistency */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f0f0f0;
-    color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.dark-mode {
-    background-color: #333;
-    color: #f0f0f0;
-}
-
-/* Sidebar Styles */
+/* Common styles for both desktop and mobile views */
 .sidebar {
-    height: 100%;
-    width: 50px;
+    width: 70px; /* Set a fixed width for the sidebar */
+    background-color: black;
+    color: #fff;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
-    padding: 20px 0px 0px 0px;
+    height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content vertically */
+    align-items: center; /* Center the content horizontally */
 }
 
 .sidebar img {
-    margin-bottom: 20px; /* Spacing between logo and icons */
-}
-
-.sidebar i {
-    font-size: 20px; /* Increase icon size */
-    margin: 10px 0; /* Spacing between icons */
+    width: 45px; /* Increase the image size */
+    height: 45px;
+    margin-bottom: 20px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 .sidebar a {
-    width: 100%;
-    text-align: center; /* Center text horizontally */
     text-decoration: none;
-    font-size: 14px;
     color: #fff;
-    margin-top: 20px;
-    
-    
+    font-size: 14px; /* Adjust the font size */
+    margin: 10px 0;
+    padding: 10px;
 }
 
 .sidebar a:hover {
-    background-color: #00ff91;
-    border-radius: 12px;
-}
-
-/* Logout Button */
-.logout-button {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logout-button a {
-    color: white;
-    text-decoration: none;
-    display: block;
-
-}
-
-.content {
-    width: 100%;
-    align-items: right;
-}
-
-/* Apply basic styles to the grid container */
-.grid-container {
-    display: grid;
-    grid-template-rows: 1fr 4fr; /* Two rows, top and bottom */
-    grid-template-columns: 1fr; /* One column for the top */
-    height: 100vh; /* Full viewport height */
-    grid-gap: 20px;
-
-}
-
-/* ... Your existing CSS ... */
-
-/* Style the top column */
-.top-column {
-    display: flex;
-    justify-content: space-between; /* Align to the right and left edges */
-    align-items: center;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.top-column-title {
-    text-align: left; /* The title is already aligned to the left */
-    margin-left: 50px;
-    flex-grow: 1; /* Allow the title to take available space */
-}
-
-.top-column h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.top-column-icons {
-    display: flex;
-    align-items: center;
-}
-
-/* Style the search bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-/* Style the search container */
-.search-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
+    background-color: blue;
     border-radius: 5px;
 }
 
-/* Style the search input */
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 10px;
-    width: 100%; /* Take up the available width */
+.logout-button {
+    margin-top: auto; /* Push the logout button to the bottom */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:hover::before {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px; /* Adjust the font size of the tooltip */
+    margin-left: 30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover::before {
+    opacity: 1;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.left-column{
+    margin-right: 30px;
+}
+
+.left-column p {
+    font-weight: bold;
+}
+
+.left-column a {
+    text-decoration: none;
+    color: #333;
+}
+
+.left-column h3 {
+    margin-top: 10px;
+}
+
+.nav-item {
+    position: relative;
+    font-size: 20px; /* Adjust the font size */
+    color: #fff; /* Set the default text color */
+    text-decoration: none;
+    margin-right: 20px; /* Adjust spacing between items */
+}
+
+.nav-item:hover::before {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    background-color: #333; /* Set the background color for the tooltip */
+    color: #fff; /* Set the text color for the tooltip */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px; /* Adjust the font size of the tooltip */
+    margin-left: 30px; /* Adjust the position of the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover::before {
+    opacity: 1;
+}
+
+
+.img {
+    border-radius: 10px;
+    color: black;
+    padding: 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.img a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+
+.img:hover{
+    background-color:blue;
+    color: white;
     border-radius: 10px;
 }
 
-/* Style and position the search icon within the container */
-.search-container i {
-    margin: 0 10px; /* Add space between the icon and input */
-    font-size: 20px;
-    cursor: pointer; /* Add a pointer cursor to the icon */
+.img strong{
+    margin-bottom: 0px;
 }
 
-/* ... Your existing CSS ... */
+.img strong:hover{
+    color: white;
+}
+
+.img p {
+    color: #000; /* Black text color */
+   
+}
+
+.img:hover p {
+    color: #fff; /* White text color on hover */
+}
+
+
+.img img {
+    justify-content: center; 
+    width: 40px;
+    height: 50px; 
+    margin: 0 10px 10px 10px;
+}
+
+.right-column {
+    width: 100vh; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 
 
 
-.mode-icons {
-    display: flex;
+
+
+
+
+.product a.addToCart {
+    display: block;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    width: 100%; /* Make the anchor tag take up the full width of the card */
+}
+
+
+
+
+
+
+
+
+/* Add these styles to center the logout popup */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
+    justify-content: center;
+}
+
+.popup-box {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.popup-container button{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
-.mode-icons i{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.categories {
-    flex-wrap: wrap;
-    justify-content: space-between; /* Distribute space evenly between categories */
-    width: 100%;
-}
-
-/* Style each category */
-.category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 80px; /* Adjust the minimum width as needed */
-    max-width: 25%; /* Limit the maximum width to 25% of the container */
-    margin: 5px; /* Add some margin between categories */
-}
-
-/* Style category images */
-.category img {
-    max-width: 50px; /* Adjust the image size as needed */
-    margin: 0 auto; /* Center the images horizontally */
-    display: block; /* Force images to display as blocks, stacking them on top of each other */
-    border-radius: 10px;
-    margin-right: 5px;
-}
-
-
-
-/* Style category text */
-.category .p {
-    font-size: 13px; /* Make the category title smaller */
-    text-align: left;
-    color: gray;
-    font-weight: bold; 
-}
-
-.category h5{
-    font-size: 9;
-}
-
-.category p{
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-}
 
 
 
 
 
-/* Float the text to the right of the image */
-.category .category-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start; /* Align text to the right of the image */
-    align-items: center;
-    position: relative;
-    padding: 10px;
-    margin-left: 20px;
-}
 
-/* Add background color to the right of the text */
-.category .category-content::before {
-    content: '';
-    flex-grow: 1;
-    height: 100%;
-    background-color: #00ff91; /* Background color */ /* Background color */
-    margin-left: 10px; /* Adjust margin as needed */
-}
 
-.category-link {
+.addToCart {
     text-decoration: none;
-    color: #333; /* Text color for unvisited links */
-    transition: color 0.3s; /* Add a smooth color transition effect */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.category .category-content:hover {
-    background-color: #00ff91; /* Change the background color on hover */
-    border-radius: 15px;
-}
-
-
-.card p{
-    font-size: 12px;
-}
-
-.card li{
-    font-size: 12px;
-}
-
-/* Style the product image */
-.card-img-top {
-    max-width: 100%;
-    height: auto;
-}
-
-.small-image {
-    max-width: 100px; /* Adjust the maximum width as needed */
-    max-height: 100px; /* Adjust the maximum height as needed */
-}
-
-.cart h3{
-    text-align: left;
-}
-
-.card img{
-    width: 200px;
-    height: 130px;
+.addToCart a:hover {
+    background-color: #45a049;
 }
 
 
 
-/* Add a media query for responsive styles */
-@media screen and (max-width: 768px) {
-    .top-column-title {
-        margin: 0 10px 0 10px; /* Adjust margins for smaller screens */
-    }
 
-    .search-bar input {
-        width: 200px; /* Adjust the width for smaller screens */
-    }
+
+.product .btn{
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.product .btn:hover{
+    color: white;
+    background-color: black;
+
 }
 
 
-/* Style the bottom columns as a sub-grid */
-.bottom-columns {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    height: 100%; /* Full height of the viewport */
-    padding-left: 50px;
-    padding-right: 10px;
-}
 
-/* Style each bottom column individually */
-.bottom-column {
-    padding: 20px;
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
     text-align: center;
-    border: 1px solid #ccc;
-    margin: 0 10px; /* Add margin only to the left and right */
+  }
+
+  .product img {
+    max-width: 100%;
+    height: 20vh;
+    margin-bottom: 10px;
+  }
+
+
+  .message{
+    background-color: blue;
+    position: sticky;
+    top:0; left:0;
+    z-index: 10000;
+    border-radius: .5rem;
+    background-color: white;
+    padding:1.5rem 2rem;
+    margin:0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap:1.5rem;
+ }
+
+ .message i{
+    font-size: 2.5rem;
+    color:black;
+    cursor: pointer;
+ }
+ 
+ .message i:hover{
+    color:red;
+ }
+
+
+ /* your_stylesheet.css */
+
+
+
+.cart-icon {
+    /* Add your styling for the cart icon here */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red; /* Adjust background color as needed */
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
 }
 
 
 
+.search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.chat-head {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-head img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none; /* Initially hidden */
+}
+
+.chat-messages {
+    overflow-y: auto;
+    max-height: 200px;
+    padding: 10px;
+}
+
+.user-message {
+    text-align: right;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.bot-message {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #28a745;
+}
+
+.user-input {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.user-input input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.user-input button {
+    margin-left: 10px;
+    padding: 8px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* Adjust the font size as needed */
+
+}
+
+.chat-messages .user-message, .chat-messages .bot-message {
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+@media (max-width: 320px){
+  
+}
+
+
+@media (max-width: 768px) {
+    body {
+        background-color: black;
+    }
+
+    .sidebar {
+        width: 10%;
+        position: absolute;
+        background-color: #333;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0; /* Set bottom to 0 to ensure full height */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .grid {
+        flex-direction: column;
+        width: 80%;
+        margin-left: 15%;
+    }
+
+    .left-column {
+        margin: 0 12%;
+        text-align: center;
+        padding-left: 5%;
+        
+    }
+
+    .left-column a{
+        font-size: 8px;
+        
+    }
+
+    .left-column img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .left-column .img {
+        display: inline-block;
+        width: 18%; /* Four categories in each row */
+        text-align: center;
+        margin: 0 4% 0 0; /* Add some spacing between categories */
+        margin-bottom: 20px;
+        
+    }
+
+    .left-column .img:hover{
+        background-color: white;
+    }
+
+    .right-column {
+        max-width: 100%; /* Allow the container to take up the full width */
+        margin: 0; /* Remove the margin to prevent extra space */
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards {
+        display: block; /* Change the display property to "block" for each card */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Add some margin to separate the cards */
+        padding: 10px; /* Add padding to the cards */
+    }
+
+    .card p{
+        font-size: 12px;
+    }
+
+    .card img {
+        width: 100%; /* Make the images take the full width of the column */
+        height: auto; /* Ensure the aspect ratio is maintained */
+    }
+}

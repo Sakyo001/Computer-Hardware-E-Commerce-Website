@@ -29,7 +29,7 @@
                         
                             <form action="register.php" method="post">
                                 <p>Username</p>
-                                <input type="text" id="username" name="username" placeholder="Username">
+                                <input type="text" id="username" name="username" placeholder="Username" required>
                                 
 
                                 <p>Password:</p>
@@ -37,30 +37,30 @@
                             
 
                                 <p>Contact Number:</p>
-                                <input type="number" id="contactnumber" name="contactnumber" placeholder="Contact Number">
+                                <input type="number" id="contactnumber" name="contactnumber" placeholder="Contact Number" required>
                             
 
                                 <div class="form-inline">
                                     <div class="input-group">
                                         <p>Age:</p>
-                                        <input type="number" id="age" name="age" placeholder="Age">
+                                        <input type="number" id="age" name="age" placeholder="Age" required>
                                     </div>
 
                                     <div class="input-group">
                                         <p>Birthday:</p>
-                                        <input type="text" id="birthday" name="birthday" placeholder="mm/dd/yy">
+                                        <input type="text" id="birthday" name="birthday" placeholder="mm/dd/yy" required>
                                     </div>
                                 </div>
                                 
                                 <div class="s-input">
                                 <p>Sex:</p>
                                     <div class="s-input-group">          
-                                        <input type="radio" id="male" name="gender" value="male">
+                                        <input type="radio" id="male" name="gender" value="male" required>
                                         <label for="male">Male</label>
                                     </div>
                                 
                                     <div class="s-input-group">
-                                        <input type="radio" id="female" name="gender" value="female">
+                                        <input type="radio" id="female" name="gender" value="female" required>
                                         <label for="female">Female</label>
                                     </div>
                                 </div>
@@ -75,8 +75,9 @@
 
                                 <input type="submit" value="Register">
 
-                                <h3>Already have an account? <a href="index.php">Click here</a></h3>
+                                <h3>Already have an account? <a href="showcase.php">Click here</a></h3>
                             </form>
+                            
                     </div>
     </div>
 
@@ -106,52 +107,52 @@
 </html>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection parameters
-    $servername = "localhost"; // Replace with your MySQL server name
-    $username = "root"; // Replace with your MySQL username
-    $password = ""; // Replace with your MySQL password
-    $dbname = "vimin"; // Replace with your database name
+// Establish a database connection
+$servername = "localhost"; // Your database server
+$username = "root"; // Your database username
+$password = ""; // Your database password
+$database = "vimin"; // Your database name
 
-    // Create a connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Get user registration data from the form
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $contactNumber = $_POST['contact_number'];
-
-    // Hash the password (for security)
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // SQL query to insert user data into the "registration" table
-    $sql = "INSERT INTO registration (username, password, email, contact_number) VALUES (?, ?, ?, ?)";
-    
-    // Prepare the statement
-    $stmt = $conn->prepare($sql);
-
-    // Bind the parameters
-    $stmt->bind_param("ssss", $username, $hashedPassword, $email, $contactNumber);
-
-    // Execute the statement
-    if ($stmt->execute()) {
-        // Registration successful, show the popup
-        echo '<script>showPopup();</script>';
-        // Delay the redirection by 2 seconds (adjust the time as needed)
-        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 2000);</script>';
-        exit(); // Ensure that no further code is executed after the redirection
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    // Close the statement and database connection
-    $stmt->close();
-    $conn->close();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Process the form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"]; // Plain text password
+    $contactnumber = $_POST["contactnumber"];
+    $age = $_POST["age"];
+    $birthday = $_POST["birthday"];
+    $gender = $_POST["gender"];
+    $address = $_POST["address"];
+    $postalcode = $_POST["postalcode"];
+
+    // Check if the username already exists
+    $check_query = "SELECT * FROM registration WHERE username = '$username'";
+    $result = $conn->query($check_query);
+
+    if ($result->num_rows > 0) {
+        echo '<script>alert("Username already exists. Please choose a different username.");</script>';
+    } else {
+        // Hash the password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insert the new user data with the hashed password
+        $insert_query = "INSERT INTO registration (username, password, contactnumber, age, birthday, gender, address, postalcode) 
+        VALUES ('$username', '$hashedPassword', '$contactnumber', '$age', '$birthday', '$gender', '$address', '$postalcode')";
+
+        if ($conn->query($insert_query) === TRUE) {
+            echo '<script>alert("Registration successful! You have created an account."); window.location.href="index.php";</script>';
+        } else {
+            echo "Error: " . $insert_query . "<br>" . $conn->error;
+        }
+    }
+}
+
+// Close the database connection
+$conn->close();
 ?>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Client</title>
+</head>
+<body>
+
+
+    <!-- WebSocket client HTML code -->
+<script>
+    const socket = new WebSocket('ws://localhost:80');
+  
+    socket.addEventListener('message', (event) => {
+      console.log('Server says:', event.data);
+      showNotification(event.data);
+    });
+  
+    function showNotification(message) {
+      console.log('Notification:', message);
+      // Implement your notification logic here
+    }
+  </script>
+  
+
+</body>
+</html>

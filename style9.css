@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+.carousel-inner {
+    transition: transform 2s ease; /* Adjust the duration for your desired slow-motion effect */
+    position: relative;
+}
+
+.carousel-inner img{
+    
+}
+
+.card-title {
+    font-size: 1.2rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+    width: 100%; /* Adjust the width as needed */
+}
+
+.card {
+    height: 200px; /* Adjust the height as needed */
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    margin-right: auto;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.navbar .nav-link{
+    font-weight: bold;
+}
+
+.shop-now-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+}
+
+ .card-img-top {
+            object-fit: cover;
+            height: 200px;
+            width: 100%; /* Adjust the width as needed */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card {
+            height: 250px; /* Adjust the height as needed */
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1); /* Adjust the scale factor for zoom effect */
+        }
+
+.contact-footer {
+    background-color: white;
+    color: black;
+    padding: 20px 40px 15px 40px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.contact-footer h2{
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+
+
+/* Style the contact info list */
+.contact-info {
+    list-style: none;
+    padding: 0 20px 0 20px;
+    margin: 0; 
+    margin-bottom: 5px;
+}
+
+
+
+.contact-info i{
+    margin-right: 10px;
+}
+
+.contact-info li {
+    font-size: 15px;
+    display: inline-block; /* Display items inline */
+    margin-right: 30px; /* Add space between items */
+    margin-top: 10px;
+}
+
+/* Font Awesome icons styling */
+.fas, .fab, .fa {
+    font-size: 20px;
+}
+
+
+.cart-icon {
+    /* Add your styling for the cart icon here */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red; /* Adjust background color as needed */
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+#myTabs .nav-item .nav-link.active {
+    background-color: #007bff; /* Active tab background color */
+    color: #fff !important; /* Active tab text color */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cart-item {
+    margin: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact-footer h2{
+        font-size: 18px;
+    }
+
+    .contact-info {
+        list-style: none;
+        padding: 0 20px 0 20px;
+        margin: 0; 
+       
+    }
+
+
+
+    .contact-info i{
+        margin-right: 8px;
+    }
+
+    .contact-info li {
+        font-size: 10px;
+        display: inline-block; /* Display items inline */
+        margin-right: 30px; /* Add space between items */
+       
+    }
+
+    /* Font Awesome icons styling */
+    .fas, .fab, .fa {
+        font-size: 18px;
+    }
+}
+
+
